@@ -1,6 +1,7 @@
 import { RecipesWebService } from './../../webservices/recipes.webservice';
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 
 
 @Component({
@@ -11,20 +12,34 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailRecipeComponent implements OnInit {
 
   @Input() id: number;
-  recipe: {};
+  //recipe: {};
+  recipe: {
+    'id': 2,
+    'servings': 'trois'
+    'title': 'bla'
+  };
 
-  constructor(private route: ActivatedRoute, private recipesWebService: RecipesWebService) {}
+  constructor(private route: ActivatedRoute, private recipesWebService: RecipesWebService, private modalCtrl: ModalController) {}
   
 
   ngOnInit() {
-
+    this.test();
   }
 
-  getRecipeDetails(id: number) {
+  test() {
+    console.log(this.id)
+  }
+
+  getRecipeDetails(id) {
     this.recipesWebService.getDetails(id).subscribe(
       (data) => {
         this.recipe = data;
       }
     );
+  }
+  handleDismissModal() {
+    this.modalCtrl.dismiss({
+      'dismissed': true
+    });
   }
 }
