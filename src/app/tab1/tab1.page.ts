@@ -31,10 +31,11 @@ export class Tab1Page implements OnInit {
    search(event: any){
      console.log(event);
      const value = event.target.value;
-     console.log(value)
+     console.log(value);
      this.recipesWebService.getRecipes(value).subscribe(
        (data) => {
          this.responseHTTP = data;
+         console.log(data);
        }
      );
    }

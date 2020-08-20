@@ -31,10 +31,4 @@ export class RecipesWebService {
    }
 
 
-  private handleError(error: HttpErrorResponse) {
-    console.log('UserWebService error', error);
-
-    return throwError('Something bad happened; please try again later.');
-  }
-
 }

@@ -1,0 +1,15 @@
+.app-timer-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-timer-box div {
+   margin-top: 150px;
+   width: 200px;
+   height: 400px;
+}
+
+ion-input {
+    border: thin solid gray;
+    border-radius: 10%;
+}

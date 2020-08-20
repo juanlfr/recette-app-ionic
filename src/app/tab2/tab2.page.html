@@ -1,18 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Call your chef friend
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-button expand="full" (click)="handleCallNumber()">Call</ion-button>
-  
+  <div class="app-box">
+    <ion-img src="https://images.assetsdelivery.com/compings_v2/dolgachov/dolgachov1707/dolgachov170702347.jpg" alt="calling chef">
+    </ion-img>
+  </div>
+  <p >"Tap on the call button to call that friend who really knows how to cook, and get the best advices"</p>
 </ion-content>
+
+<ion-footer>
+  <ion-button expand="full" (click)="handleCallNumber()">Call</ion-button>
+</ion-footer>

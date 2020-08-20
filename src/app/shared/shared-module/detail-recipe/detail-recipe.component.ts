@@ -1,7 +1,7 @@
 import { RecipesWebService } from './../../webservices/recipes.webservice';
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-detail-recipe',
@@ -9,6 +9,8 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./detail-recipe.component.scss'],
 })
 export class DetailRecipeComponent implements OnInit {
+
+  subscription$: Subscription;
 
   @Input() id: number;
   recipe: {};
