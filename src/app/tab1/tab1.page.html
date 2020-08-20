@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      recherche
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,30 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">recherche</ion-title>
     </ion-toolbar>
   </ion-header>
+  
+  <ion-searchbar (ionChange)= "search($event);" debounce="500" placeholder="Spaguetti à la bolognaise"></ion-searchbar>
+
+  <ion-content>
+
+      <ion-content>
+        <ion-virtual-scroll [items]="responseHTTP.results" approxItemHeight="320px">
+          <ion-card (click)="handleOpenModal(recipe.id)" *virtualItem="let recipe; let itemBounds = bounds;">
+            <div>
+              <ion-img [src]="recipe.image"  [alt]="recipe.title"></ion-img>
+            </div>
+          <ion-card-header>
+            <ion-card-title>{{ recipe.title }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>{{ recipe.id }}</ion-card-content>
+          </ion-card>
+        </ion-virtual-scroll>
+      </ion-content>
+
+    
+  </ion-content>
 
   <app-explore-container name="Tab 1 page"></app-explore-container>
 </ion-content>
