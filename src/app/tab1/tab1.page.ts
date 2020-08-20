@@ -3,8 +3,7 @@ import { ObservableService } from './../shared/services/observableService.servic
 import { RecipesWebService } from './../shared/webservices/recipes.webservice';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { Subject, Observable, BehaviorSubject } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-tab1',
@@ -14,31 +13,31 @@ import { ActivatedRoute } from '@angular/router';
 export class Tab1Page implements OnInit {
 
   responseHTTP = {
-    results : [
-      {
-        'id': 1,
-        'title': 'Pasta y arroz'
+    // results : [
+    //   {
+    //     'id': 1,
+    //     'title': 'Pasta y arroz'
 
-      }
-    ]
+    //   }
+    // ]
   };
 
- constructor(private recipesWebService: RecipesWebService, private observableService: ObservableService, public modalController: ModalController) {
+ constructor(private recipesWebService: RecipesWebService, public modalController: ModalController) {
   }
 
   ngOnInit() {
 
   }
-  // search(event: any){
-  //   console.log(event);
-  //   const value = event.target.value;
-  //   console.log(value)
-  //   this.recipesWebService.getRecipes(value).subscribe(
-  //     (data) => {
-  //       this.responseHTTP = data;
-  //     }
-  //   );
-  // }
+   search(event: any){
+     console.log(event);
+     const value = event.target.value;
+     console.log(value)
+     this.recipesWebService.getRecipes(value).subscribe(
+       (data) => {
+         this.responseHTTP = data;
+       }
+     );
+   }
 
   async handleOpenModal(recipeId: number) {
     const modal = await this.modalController.create({

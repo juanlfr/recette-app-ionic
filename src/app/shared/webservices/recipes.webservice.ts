@@ -27,7 +27,7 @@ export class RecipesWebService {
    }
 
    getDetails(id): Observable<any> {
-    return this.http.get<any>(this.baseUrl + `${id}/information&apiKey=${this.apiKey}`);
+    return this.http.get<any>(this.baseUrl + `${id}/information?apiKey=${this.apiKey}`);
    }
 
 
