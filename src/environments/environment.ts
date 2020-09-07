@@ -4,7 +4,7 @@
 // require('dotenv').config();
 export const environment = {
   production: false,
-  apikey: 'ff3ba4f45f4a4fff8e7bd91d513d39e3'
+  apikey: ''
 };
 
 /*
